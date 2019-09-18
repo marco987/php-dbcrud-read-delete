@@ -1,6 +1,13 @@
 $(document).ready(function(){
 
+function ricarica() {
+  $("#pagamenti").html("");
+}
+
 function getPagamenti() {
+
+  ricarica();
+
   $.ajax({
     url: "api.php",
     method: "GET",
@@ -28,11 +35,34 @@ function printPagamenti(data) {
 
 }
 
+function deletePagamento() {
+
+  var bottoneDelete = $(this);
+  var box = bottoneDelete.parent();
+
+  var idPagamento = box.attr("operazione-id");
+
+  $.ajax({
+    url: "api-delete.php",
+    method: "GET",
+    data: { id : idPagamento },
+    success: function(data){
+      getPagamenti();
+    },
+    error: function(){
+      alert("Errore");
+    }
+  });
+
+}
+
+
 
 
 // Richiamo funzioni
 getPagamenti();
-
+deletePagamento();
+$(document).on("click", ".cancella", deletePagamento)
 
 
 

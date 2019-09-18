@@ -60,14 +60,14 @@
   color: #fff;
 }
 
-#cancella {
+.cancella {
   font-size: 12px;
   font-weight: lighter;
   margin-top: 10px;
   text-align: center;
 }
 
-#cancella:hover {
+.cancella:hover {
   cursor: pointer;
   font-weight: bold;
   text-transform: uppercase;

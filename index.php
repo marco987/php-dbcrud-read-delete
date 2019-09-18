@@ -18,11 +18,11 @@
     <script id="item-template" type="text/x-handlebars-template">
       <div class="box {{status}}">
         <h4>Pagamenti di categoria "{{status}}" ></h4>
-        <div class="operazione" operazione-id:"{{id}}">
+        <div class="operazione" operazione-id="{{id}}">
           <p>Numero prenotazione: <span>{{prenotazione_id}}</span></p>
           <p>Prezzo: <span>{{price}} €</span></p>
           <p>Codice ospite: <span>{{pagante_id}}</span></p>
-          <p id="cancella">Cancella operazione</p>
+          <p class="cancella">Cancella operazione</p>
         </div>
       </div>
     </script>
