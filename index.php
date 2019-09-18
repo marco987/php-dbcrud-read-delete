@@ -16,7 +16,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js" charset="utf-8"></script>
     <!-- TEMPLATE: MESSAGE MENU -->
     <script id="item-template" type="text/x-handlebars-template">
-      <!-- scrivere qui il template -->
+      <div class="box {{status}}">
+        <h4>Pagamenti di categoria "{{status}}" ></h4>
+        <div class="operazione" operazione-id:"{{id}}">
+          <p>Numero prenotazione: <span>{{prenotazione_id}}</span></p>
+          <p>Prezzo: <span>{{price}} €</span></p>
+          <p>Codice ospite: <span>{{pagante_id}}</span></p>
+          <p id="cancella">Cancella operazione</p>
+        </div>
+      </div>
     </script>
     <!-- CSS: MY STYLE -->
     <link rel="stylesheet" href="style.css">
@@ -30,7 +38,12 @@
   <body>
 
     <div id="container">
+      <div id="titolo">
+        <h1>PAGAMENTI</h1>
+      </div>
+      <div id="pagamenti">
 
+      </div>
     </div>
 
   </body>
