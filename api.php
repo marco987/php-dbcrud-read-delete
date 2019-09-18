@@ -5,7 +5,7 @@
   $servername = 'localhost';
   $username = 'root';
   $password = 'root';
-  $dbname = 'NOME_DATABASE';
+  $dbname = 'hoteldb';
 
   $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,23 +15,26 @@
     die();
   }
 
-  $query = "QUERY_PER_IL_DATABASE";
+  $query = "SELECT *
+            FROM pagamenti
+            WHERE id >= 100";
+
   $res = $conn -> query($query);
 
-  $array = [];
+  $pagamenti = [];
 
   if ($res && $res -> num_rows > 0) {
 
     while($row = $res -> fetch_assoc()) {
 
-      $array[] = $row;
+      $pagamenti[] = $row;
 
     }
   }
 
   $conn->close();
 
-  echo json_encode($array);
+  echo json_encode($pagamenti);
 
 
 
